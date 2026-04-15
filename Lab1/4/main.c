@@ -17,7 +17,7 @@
 #define PIN_TXD 20
 #define PIN_RXD 22
 
-const nrfx_rtc_t rtc_instance = NRFX_RTC_INSTANCE(0);
+nrfx_rtc_t rtc_instance = NRFX_RTC_INSTANCE(0);
 
 //Skapar en driver instance för UARTE:
 nrfx_uarte_t instance = NRFX_UARTE_INSTANCE(0);
@@ -53,8 +53,6 @@ int main(void)
 	if (errr != 0){
 	//Här kan vi implementera felhantering, men för stunden håller vi tummarna att allt funkar
 	}
-    //Initierar systick:
-    nrfx_systick_init();
 
     //Initierar rtc:
     nrfx_rtc_config_t rtc_config = NRFX_RTC_DEFAULT_CONFIG;
