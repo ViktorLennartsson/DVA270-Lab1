@@ -78,8 +78,8 @@ int main(void)
 	//uarte_write(teckenArray, strlen(teckenArray)*1);  //Skriver ut värdet på teckenArray
 
     char msg1[] = " \n\r Skriv tecken så läses dem av och sedan återvänder dem vid 'Enter' eller efter max antal tecken!
-    \n\r Samt konverteras till int och sedan tillbaka till text som du får!!! \n\r";
-    uarte_write(msg1, sizeof(msg1));
+    \n\r Samt konverteras till int och sedan tillbaka till text som du får!!! \n\r"; //Meddelande
+    uarte_write(msg1, sizeof(msg1)); //Skicka meddelande
 
 	//1.2
 	int mainNumber;   //Skapar int

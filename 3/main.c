@@ -69,21 +69,30 @@ int main(void)
     //Initierar systick:
     nrfx_systick_init();
 
+	//Skapar variabler
     int waitTime;
+	//Skapar meddelanden
     char msg1[] = " \n\r Skriv in ett heltal så kommer programmet vänta så länge innan det svarar\n\r";
     char msg2[] = " \n\r Det tar för lång tid!!! \n\r";
     char msg3[] = " \n\r Hej hej! \n\r";
+	//Main loop med funktioner
     while(1)
     {
+		//Skriver ut instruktion för programmet
         uarte_write(msg1, sizeof(msg1));
+		//Läs väntetiden från användaren
         waitTime = read_int();
+		//Kolla om väntetiden överskrids
         if(waitTime>MAXWAIT)
         {
+			//Skriv att maxtiden överskrids
             uarte_write(msg2, sizeof(msg2));
         }
         else
         {
+			//Vänta i väntetiden
             delay_s(waitTime);
+			//Skriv att vi nu har väntat
             uarte_write(msg3, sizeof(msg3));
         }
     }
